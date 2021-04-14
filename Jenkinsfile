@@ -1,12 +1,14 @@
 pipeline {
 	agent any 
+    tools {
+        maven 'Maven 3.3.9'
+        jdk 'jdk8'
+    }	
 	stages{
 		stage("build"){
 			steps{
-				echo "Building the application ...."
-				withMaven("Maven-3.6.3"){
+					echo "Building the application ...."
 					sh "mvn clean compile"
-				}
 			}
 		}
 		stage("test"){
