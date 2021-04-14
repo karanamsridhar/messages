@@ -9,6 +9,6 @@ public class MessageController {
 
 	@GetMapping("/hello/{name}")
 	public String getMessage(@PathVariable(name="name")String name) {
-		return "Hello, "+name;
+		return "Hello, "+name+". How are you?";
 	}
 }
