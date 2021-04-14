@@ -18,11 +18,13 @@ pipeline {
 			}
 			steps{
 				echo "Testing the application ...."
+				sh "mvn test"
 			}
 		}
 		stage("deploy"){
 			steps{
 				echo "Deploying the application ...."
+				sh "mvn package"
 			}
 		}
 	}
